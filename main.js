@@ -1,5 +1,5 @@
-//var dir = 'http://localhost/wordpractice/';
-var dir = 'http://mikidani.probaljaki.hu/wordpractice/';
+//var dir = 'http://mikidani.probaljaki.hu/wordpractice/';
+var dir = 'http://localhost/wordpractice/';
 
 class LoadData {
     dir;
@@ -211,19 +211,23 @@ class Engine {
 
         // filtration words
         if (this.searchWordInputEn.value.length>0 || this.searchWordInputHu.value.length>0) {
-            let en = this.searchWordInputEn.value; let hu = this.searchWordInputHu.value;
+
+            let en = this.searchWordInputEn.value.toLowerCase(); let hu = this.searchWordInputHu.value.toLowerCase();
+            this.searchWordInputEn.value = en; this.searchWordInputHu.value = hu;
 
             Object.keys(wordsData.data).forEach(element => {
-                if ((en.length>0 && element.includes(en)) || 
-                    (hu.length>0 && wordsData.data[element].includes(hu))) {
-                    drawText += `<tr><td class="ps-3">${element}</td><td>${wordsData.data[element]}</td></tr>`;
-                }     
+                let toLowElement = element.toLowerCase();
+                if ((en.length>0 && toLowElement.includes(en)) || 
+                    (hu.length>0 && wordsData.data[toLowElement].includes(hu))) {
+                    drawText += `<tr><td class="ps-3">${toLowElement}</td><td>${wordsData.data[toLowElement]}</td></tr>`;
+                }
             });
         
         } else {
             // all words
             Object.keys(wordsData.data).forEach(element => {
-                drawText += `<tr><td class="ps-3">${element}</td><td>${wordsData.data[element]}</td></tr>`;
+                let toLowElement = element.toLowerCase();
+                drawText += `<tr><td class="ps-3">${toLowElement}</td><td>${wordsData.data[toLowElement]}</td></tr>`;
             });
         }
 
