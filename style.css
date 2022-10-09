@@ -1,0 +1,34 @@
+body {
+    font-family: sans-serif;
+}
+
+#transfer, #options, #words {
+    display: none;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.icon-logo {
+    width: 2rem;
+    height: 2rem;
+    margin-top: -10px;
+}
+
+#engWord, #huWord, #response, #inputDiv {
+    min-height: 2rem;
+}
+
+#next-button {
+    display: none;
+}
+
+#see-button {
+    display: inline;
+}
+
+#soundSwitch {
+    display: inline;
+    width: 2rem;
+}

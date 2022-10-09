@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="main.js" defer></script>
+    <title>MD-Word Practice</title>
+</head>
+<body class="bg-dark">
+    <div class="container bg-light rounded pb-2 mt-3 pt-4">
+        <div class="logo text-center"><h1 class="pb-2"><img class="icon-logo" src="img/word.svg"/>MD-Word Practice</h1></div>
+        <div class="text-center"><img id="soundSwitch" src="img/volume-on.svg" alt="soundSwitch"></div>
+        <hr>
+        <div id="transfer" class="row m-2 p-2">
+            <h4 id="nowNumber" class="text-center"></h4>
+            <h3 id="engWord" class="text-center">eng</h3>
+            <h3 id="huWord" class="text-center">hu</h3>
+            <div id="inputDiv">
+                <input type="text" id="input" class="form-control form-control-sm text-center mt-3 mb-3" placeholder="válasz..." />
+            </div>
+            <h3 id="response" class="text-center mt-2"></h3>
+            <div class="text-center">
+                <button type="button"  id="see-button" class="btn btn-warning mt-4">Look</button>
+                <button type="button"  id="next-button" class="btn btn-success mt-4">Next</button>
+            </div>
+        </div>
+
+        <div id="options" class="row m-2 p-2">
+            <div class="row ms-2">
+                <div class="text-center">
+                    <button id="langButton" class="btn btn-primary btn-sm mb-3">EN-HU</button>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mode" value="01" checked/>
+                    <label class="form-check-label">Mode 1: A word can occur more than once.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mode" value="02" />
+                    <label class="form-check-label mb-3">Mode 2: A word can only occur once.</label>
+                </div>
+            </div>
+            <div><input type="number" id="questionNumber" class="form-control form-control-sm" min="1" value="10" /></div>
+            <div id="message" class="text-center color-danger mt-4"></div>
+            <div class="text-center">
+                <button type="button" id="start-button" class="btn btn-success mt-4">Start</button>
+            </div>
+            <hr class="mt-3" />
+            <div class="text-center">
+                <button type="button" id="words-button" class="btn btn-warning">View the words</button>
+            </div>
+        </div>
+        
+        <div id="words" class="row m-2 p-2">
+            <div class="row m-0 p-0">
+                <div class="searchInput col-6 mb-3"><input type="text" id="wordFinderEn" class="form-control form-control-sm" placeholder="English search..."/></div>
+                <div class="searchInput col-6 mb-3"><input type="text" id="wordFinderHu" class="form-control form-control-sm" placeholder="Hungary search..."/></div>
+            </div>
+            <div id="words-data"></div>
+        </div>
+
+    </div>
+    <div id="audios"></div>
+</body>
+</html>
