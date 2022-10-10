@@ -214,20 +214,23 @@ class Engine {
 
             let en = this.searchWordInputEn.value.toLowerCase(); let hu = this.searchWordInputHu.value.toLowerCase();
             this.searchWordInputEn.value = en; this.searchWordInputHu.value = hu;
-
+            let upper = 1;
             Object.keys(wordsData.data).forEach(element => {
                 let toLowElement = element.toLowerCase();
                 if ((en.length>0 && toLowElement.includes(en)) || 
                     (hu.length>0 && wordsData.data[toLowElement].includes(hu))) {
-                    drawText += `<tr><td class="ps-3">${toLowElement}</td><td>${wordsData.data[toLowElement]}</td></tr>`;
+                    drawText += `<tr><td class="ps-3">${upper}. ${toLowElement}</td><td>${wordsData.data[toLowElement]}</td></tr>`;
+                    upper++;
                 }
             });
         
         } else {
             // all words
+            let upper = 1;
             Object.keys(wordsData.data).forEach(element => {
                 let toLowElement = element.toLowerCase();
-                drawText += `<tr><td class="ps-3">${toLowElement}</td><td>${wordsData.data[toLowElement]}</td></tr>`;
+                drawText += `<tr><td class="ps-3">${upper}. ${toLowElement}</td><td>${wordsData.data[toLowElement]}</td></tr>`;
+                upper++;
             });
         }
 
