@@ -180,7 +180,9 @@ class Engine {
                 this.message.innerHTML = 'Maximum '+arrayData.length+' questions can be.<br>The wordbook is so long now.';
             }
         }
-        // if (wordsDataList.length>0) { console.log(wordsDataList); }
+        // list words in console.
+        if (wordsDataList.length>0) { console.log(wordsDataList); }
+        
         return wordsDataList;
     }
 
